@@ -4,7 +4,7 @@
   "description": "Powerful utility library for JS",
   "main": "dist/index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "mocha"
   },
   "keywords": [
     "validation",
@@ -15,6 +15,11 @@
   "author": "shravan20",
   "license": "MIT",
   "devDependencies": {
+    "@types/chai": "^4.3.5",
+    "@types/mocha": "^10.0.1",
+    "chai": "^4.3.8",
+    "mocha": "^10.2.0",
+    "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   }
 }
