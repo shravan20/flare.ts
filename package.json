@@ -2,7 +2,7 @@
   "name": "flare",
   "version": "1.0.0",
   "description": "Powerful utility library for JS",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "npm test"
   },
@@ -13,5 +13,8 @@
     "library"
   ],
   "author": "shravan20",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
 }
