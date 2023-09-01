@@ -1,0 +1,17 @@
+{
+  "name": "flare",
+  "version": "1.0.0",
+  "description": "Powerful utility library for JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "keywords": [
+    "validation",
+    "javascript",
+    "utility",
+    "library"
+  ],
+  "author": "shravan20",
+  "license": "MIT"
+}
