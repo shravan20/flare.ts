@@ -1,6 +1,6 @@
 export function isAnyPropertyTrue<T>(
   collection: T[],
-  mapper: (item: T) => boolean | null | undefined
+  mapper: (item: T) => boolean | null | undefined,
 ): boolean {
   return collection
     .map(mapper)
