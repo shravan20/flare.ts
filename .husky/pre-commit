@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "Running Unit Tests"
+npm test
+
+echo "Formatting code"
+npm run format
+
+echo "Applying Linter"
+npm run lint
+
+echo "Fix Linter Issues"
+npm run lint:fix
