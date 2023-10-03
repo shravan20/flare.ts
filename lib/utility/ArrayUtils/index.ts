@@ -24,7 +24,7 @@ export function filterNegate<T>(list: T[], predicate: Predicate<T>): T[] {
   return filter(list, (item) => !predicate(item));
 }
 
-export function findFirst<T>(
+export function findFirstMatching<T>(
   list: T[],
   predicate: Predicate<T>,
   defaultValue?: T,

@@ -4,7 +4,7 @@ import {
   filter,
   filterFalsy,
   filterNegate,
-  findFirst,
+  findFirstMatching,
 } from "../../utility/ArrayUtils/index";
 
 describe("Sample Test Suite", () => {
@@ -66,25 +66,25 @@ describe("Filter Functions", () => {
   });
 });
 
-describe("findFirst", () => {
+describe("findFirstMatching", () => {
   const list = [1, 2, 3, 4, 5];
 
   it("should find the first matching element", () => {
     const predicate = (item: number): boolean => item % 2 === 0;
-    const result = findFirst(list, predicate);
+    const result = findFirstMatching(list, predicate);
     expect(result).to.equal(2);
   });
 
   it("should return undefined if no match is found", () => {
     const predicate = (item: number): boolean => item > 10;
-    const result = findFirst(list, predicate);
+    const result = findFirstMatching(list, predicate);
     expect(result).to.equal(undefined);
   });
 
   it("should return the default value if no match is found", () => {
     const predicate = (item: number): boolean => item > 10;
     const defaultValue = -1;
-    const result = findFirst(list, predicate, defaultValue);
+    const result = findFirstMatching(list, predicate, defaultValue);
     expect(result).to.equal(defaultValue);
   });
 });
