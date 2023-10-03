@@ -4,7 +4,7 @@ import { fillArray, filterFalsy } from "../../utility/ArrayUtils/index";
 describe("Sample Test Suite", () => {
   it("Sample Test Case-1", () => {
     const value = true;
-    expect(value).to.be.true;
+    expect(value).to.equal(true);
   });
 });
 
@@ -14,13 +14,13 @@ describe("fillArray", () => {
 
     expect(result).to.be.an("array");
     expect(result).to.have.lengthOf(5);
-    expect(result.every((v) => v === "test")).to.be.true;
+    expect(result.every((v) => v === "test")).to.equal(true);
   });
 });
 
 describe("filterFalsy", () => {
   it("should filter out falsy values", () => {
-    const inputList: (number | null | undefined | string)[] = [
+    const inputList: Array<number | null | undefined | string> = [
       1,
       0,
       null,
@@ -40,6 +40,7 @@ describe("filterFalsy", () => {
     const result = filterFalsy(inputList);
 
     // Empty list, so the result should also be an empty list
-    expect(result).to.be.an("array").that.is.empty;
+    expect(result).to.be.an("array");
+    expect(result).to.have.lengthOf(0);
   });
 });

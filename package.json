@@ -5,20 +5,17 @@
     "main": "dist/index.js",
     "scripts": {
         "build": "tsc",
-        "format": "prettier --write \"lib/**/*.ts\" \"tests/**/*.ts\"",
+        "format": "prettier --write \"lib/**/*.ts\" \"lib/tests/**/*.ts\"",
         "lint": "eslint lib/**/*.ts lib/*.ts",
         "lint:fix": "npm run lint --fix",
         "prepare": "husky install",
         "prepublishOnly": "npm run build",
         "postinstall": "husky install",
         "sample": "husky install",
-        "test": "mocha --require ts-node/register 'lib/tests/**/*.spec.ts' 'lib/tests/*.spec.ts'"
+        "test": "mocha --require ts-node/register 'lib/tests/**/*.spec.ts' 'lib/tests/**/*.spec.ts'"
     },
     "keywords": [
-        "validation",
-        "javascript",
-        "utility",
-        "library"
+        "validation", "javascript", "utility", "library"
     ],
     "author": "shravan20",
     "license": "MIT",
