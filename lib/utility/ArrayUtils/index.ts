@@ -32,9 +32,16 @@ export function findFirstMatching<T>(
   return array.find(predicate) ?? defaultValue;
 }
 
-export function getTopN<T>(array: T[], limit: number = 0): T[] {
+export function getHeadN<T>(array: T[], limit: number = 0): T[] {
   return array.slice(0, limit);
 }
+
+export function getTailN<T>(array: T[], limit: number = 0): T[] {
+  if (array.length > limit) {
+    return array.slice(-limit);
+  }
+  return array;
+}  
 
 // TODO: To be moved to Monad Utils
 type Predicate<T> = (item: T) => boolean;

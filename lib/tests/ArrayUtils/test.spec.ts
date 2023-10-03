@@ -5,7 +5,8 @@ import {
   filterFalsy,
   filterNegate,
   findFirstMatching,
-  getTopN,
+  getHeadN,
+  getTailN,
 } from "../../utility/ArrayUtils/index";
 
 describe("Sample Test Suite", () => {
@@ -94,22 +95,46 @@ describe("getTopN", () => {
   const sampleArray = [10, 20, 30, 40, 50];
 
   it("should take the first N elements from the array", () => {
-    const result = getTopN(sampleArray, 3);
+    const result = getHeadN(sampleArray, 3);
     expect(result).to.deep.equal([10, 20, 30]);
   });
 
   it("should take the first element if N is 1", () => {
-    const result = getTopN(sampleArray, 1);
+    const result = getHeadN(sampleArray, 1);
     expect(result).to.deep.equal([10]);
   });
 
   it("should take an empty array if N is 0", () => {
-    const result = getTopN(sampleArray, 0);
+    const result = getHeadN(sampleArray, 0);
     expect(result).to.deep.equal([]);
   });
 
   it("should take the entire array if N is greater than the array length", () => {
-    const result = getTopN(sampleArray, 10);
+    const result = getHeadN(sampleArray, 10);
+    expect(result).to.deep.equal(sampleArray);
+  });
+});
+
+describe("getTailN", () => {
+  const sampleArray = [10, 20, 30, 40, 50];
+
+  it("should retrieve the last N elements from the array", () => {
+    const result = getTailN(sampleArray, 3);
+    expect(result).to.deep.equal([30, 40, 50]);
+  });
+
+  it("should retrieve the last element if N is 1", () => {
+    const result = getTailN(sampleArray, 1);
+    expect(result).to.deep.equal([50]);
+  });
+
+  it("should retrieve an empty array if N is 0", () => {
+    const result = getTailN(sampleArray, 0);
+    expect(result).to.deep.equal([]);
+  });
+
+  it("should retrieve the entire array if N is greater than the array length", () => {
+    const result = getTailN(sampleArray, 10);
     expect(result).to.deep.equal(sampleArray);
   });
 });
