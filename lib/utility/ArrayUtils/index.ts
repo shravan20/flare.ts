@@ -12,12 +12,12 @@ export function fillArray<T>(length: number, value: T): T[] {
   return Array(length).fill(value);
 }
 
-export function filterFalsy<T>(list: T[]): T[] {
-  return list.filter((item) => item);
+export function filterFalsy<T>(array: T[]): T[] {
+  return array.filter((item) => item);
 }
 
-export function filter<T>(list: T[], predicate: Predicate<T>): T[] {
-  return list.filter(predicate);
+export function filter<T>(array: T[], predicate: Predicate<T>): T[] {
+  return array.filter(predicate);
 }
 
 export function filterNegate<T>(list: T[], predicate: Predicate<T>): T[] {
@@ -25,11 +25,11 @@ export function filterNegate<T>(list: T[], predicate: Predicate<T>): T[] {
 }
 
 export function findFirstMatching<T>(
-  list: T[],
+  array: T[],
   predicate: Predicate<T>,
   defaultValue?: T,
 ): T | undefined {
-  return list.find(predicate) ?? defaultValue;
+  return array.find(predicate) ?? defaultValue;
 }
 
 // TODO: To be moved to Monad Utils
