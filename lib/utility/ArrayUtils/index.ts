@@ -1,4 +1,4 @@
-export function isAnyPropertyTrue<T>(
+export function isAnyMatching<T>(
   array: T[] = [],
   mapper: (item: T) => boolean,
 ): boolean {
@@ -6,6 +6,10 @@ export function isAnyPropertyTrue<T>(
     .map(mapper)
     .filter(Boolean)
     .reduce((a, b) => a ?? b, false);
+}
+
+export function isAnyMatchingLazy<T>(array: T[], predicate: (item: T) => boolean): boolean {
+  return array.some(predicate);
 }
 
 export function fillArray<T>(length: number, value: T): T[] {

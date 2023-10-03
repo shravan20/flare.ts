@@ -7,6 +7,7 @@ import {
   findFirstMatching,
   getHeadN,
   getTailN,
+  isAnyMatchingLazy,
 } from "../../utility/ArrayUtils/index";
 
 describe("Sample Test Suite", () => {
@@ -136,5 +137,19 @@ describe("getTailN", () => {
   it("should retrieve the entire array if N is greater than the array length", () => {
     const result = getTailN(sampleArray, 10);
     expect(result).to.deep.equal(sampleArray);
+  });
+});
+
+describe("isAnyMatchingLazy", () => {
+  const sampleArray = [1, 2, 3, 4, 5];
+
+  it("should return true if any property matches the predicate", () => {
+    const result = isAnyMatchingLazy(sampleArray, item => item > 3);
+    expect(result).to.be.equal(true);
+  });
+
+  it("should return false if no property matches the predicate", () => {
+    const result = isAnyMatchingLazy(sampleArray, item => item > 10);
+    expect(result).to.be.equal(false);
   });
 });
