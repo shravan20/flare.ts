@@ -8,7 +8,10 @@ export function isAnyMatching<T>(
     .reduce((a, b) => a ?? b, false);
 }
 
-export function isAnyMatchingLazy<T>(array: T[], predicate: (item: T) => boolean): boolean {
+export function isAnyMatchingLazy<T>(
+  array: T[],
+  predicate: (item: T) => boolean,
+): boolean {
   return array.some(predicate);
 }
 

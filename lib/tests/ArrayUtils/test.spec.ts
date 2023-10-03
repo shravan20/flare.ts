@@ -144,12 +144,12 @@ describe("isAnyMatchingLazy", () => {
   const sampleArray = [1, 2, 3, 4, 5];
 
   it("should return true if any property matches the predicate", () => {
-    const result = isAnyMatchingLazy(sampleArray, item => item > 3);
+    const result = isAnyMatchingLazy(sampleArray, (item) => item > 3);
     expect(result).to.be.equal(true);
   });
 
   it("should return false if no property matches the predicate", () => {
-    const result = isAnyMatchingLazy(sampleArray, item => item > 10);
+    const result = isAnyMatchingLazy(sampleArray, (item) => item > 10);
     expect(result).to.be.equal(false);
   });
 });
