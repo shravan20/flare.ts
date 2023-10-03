@@ -4,6 +4,7 @@ import {
   filter,
   filterFalsy,
   filterNegate,
+  findFirst,
 } from "../../utility/ArrayUtils/index";
 
 describe("Sample Test Suite", () => {
@@ -62,5 +63,28 @@ describe("Filter Functions", () => {
     const isEven = (num: number): boolean => num % 2 === 0;
     const oddNumbers = filterNegate(numbers, isEven);
     expect(oddNumbers).to.deep.equal([1, 3, 5]);
+  });
+});
+
+describe("findFirst", () => {
+  const list = [1, 2, 3, 4, 5];
+
+  it("should find the first matching element", () => {
+    const predicate = (item: number): boolean => item % 2 === 0;
+    const result = findFirst(list, predicate);
+    expect(result).to.equal(2);
+  });
+
+  it("should return undefined if no match is found", () => {
+    const predicate = (item: number): boolean => item > 10;
+    const result = findFirst(list, predicate);
+    expect(result).to.equal(undefined);
+  });
+
+  it("should return the default value if no match is found", () => {
+    const predicate = (item: number): boolean => item > 10;
+    const defaultValue = -1;
+    const result = findFirst(list, predicate, defaultValue);
+    expect(result).to.equal(defaultValue);
   });
 });
