@@ -1,8 +1,8 @@
 export function isAnyPropertyTrue<T>(
-  collection: T[] = [],
+  array: T[] = [],
   mapper: (item: T) => boolean,
 ): boolean {
-  return collection
+  return array
     .map(mapper)
     .filter(Boolean)
     .reduce((a, b) => a ?? b, false);
