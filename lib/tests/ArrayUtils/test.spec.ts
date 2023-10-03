@@ -5,6 +5,7 @@ import {
   filterFalsy,
   filterNegate,
   findFirstMatching,
+  getTopN,
 } from "../../utility/ArrayUtils/index";
 
 describe("Sample Test Suite", () => {
@@ -86,5 +87,29 @@ describe("findFirstMatching", () => {
     const defaultValue = -1;
     const result = findFirstMatching(list, predicate, defaultValue);
     expect(result).to.equal(defaultValue);
+  });
+});
+
+describe("getTopN", () => {
+  const sampleArray = [10, 20, 30, 40, 50];
+
+  it("should take the first N elements from the array", () => {
+    const result = getTopN(sampleArray, 3);
+    expect(result).to.deep.equal([10, 20, 30]);
+  });
+
+  it("should take the first element if N is 1", () => {
+    const result = getTopN(sampleArray, 1);
+    expect(result).to.deep.equal([10]);
+  });
+
+  it("should take an empty array if N is 0", () => {
+    const result = getTopN(sampleArray, 0);
+    expect(result).to.deep.equal([]);
+  });
+
+  it("should take the entire array if N is greater than the array length", () => {
+    const result = getTopN(sampleArray, 10);
+    expect(result).to.deep.equal(sampleArray);
   });
 });

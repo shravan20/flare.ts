@@ -20,8 +20,8 @@ export function filter<T>(array: T[], predicate: Predicate<T>): T[] {
   return array.filter(predicate);
 }
 
-export function filterNegate<T>(list: T[], predicate: Predicate<T>): T[] {
-  return filter(list, (item) => !predicate(item));
+export function filterNegate<T>(array: T[], predicate: Predicate<T>): T[] {
+  return filter(array, (item) => !predicate(item));
 }
 
 export function findFirstMatching<T>(
@@ -30,6 +30,10 @@ export function findFirstMatching<T>(
   defaultValue?: T,
 ): T | undefined {
   return array.find(predicate) ?? defaultValue;
+}
+
+export function getTopN<T>(array: T[], limit: number = 0): T[] {
+  return array.slice(0, limit);
 }
 
 // TODO: To be moved to Monad Utils
