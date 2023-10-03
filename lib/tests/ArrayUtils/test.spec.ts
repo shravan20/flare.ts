@@ -1,5 +1,10 @@
 import { expect } from "chai";
-import { fillArray, filter, filterFalsy, filterNegate } from "../../utility/ArrayUtils/index";
+import {
+  fillArray,
+  filter,
+  filterFalsy,
+  filterNegate,
+} from "../../utility/ArrayUtils/index";
 
 describe("Sample Test Suite", () => {
   it("Sample Test Case-1", () => {

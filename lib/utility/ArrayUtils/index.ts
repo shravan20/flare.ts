@@ -21,7 +21,7 @@ export function filter<T>(list: T[], predicate: Predicate<T>): T[] {
 }
 
 export function filterNegate<T>(list: T[], predicate: Predicate<T>): T[] {
-  return filter(list, item => !predicate(item));
+  return filter(list, (item) => !predicate(item));
 }
 
 // TODO: To be moved to Monad Utils
