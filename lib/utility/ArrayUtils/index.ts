@@ -37,11 +37,8 @@ export function getHeadN<T>(array: T[], limit: number = 0): T[] {
 }
 
 export function getTailN<T>(array: T[], limit: number = 0): T[] {
-  if (array.length > limit) {
-    return array.slice(-limit);
-  }
-  return array;
-}  
+  return limit <= 0 ? [] : array.slice(-limit);
+}
 
 // TODO: To be moved to Monad Utils
 type Predicate<T> = (item: T) => boolean;
