@@ -14,7 +14,6 @@
         "sample": "husky install",
         "test": "mocha --require ts-node/register 'lib/tests/**/*.spec.ts' 'lib/tests/**/*.spec.ts'",
         "check-setup": "npm run lint && npm run test && npm run build"
-        "test": "mocha --require ts-node/register 'lib/tests/**/*.spec.ts' 'lib/tests/**/*.spec.ts'"
     },
     "keywords": [
         "validation", "javascript", "utility", "library"
