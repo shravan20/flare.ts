@@ -11,10 +11,9 @@ import {
   getTailN,
   getUniqueElements,
   intersection,
-  isAnyMatchingLazy,
   removeValuesFrom,
-  union,
   isAnyMatchingLazy,
+  union,
 } from "../../utility/ArrayUtils/index";
 
 describe("Sample Test Suite", () => {
