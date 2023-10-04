@@ -7,6 +7,7 @@ import {
   findFirstMatching,
   getHeadN,
   getTailN,
+  getUniqueElements,
   isAnyMatchingLazy,
   removeValuesFrom,
 } from "../../utility/ArrayUtils/index";
@@ -172,5 +173,28 @@ describe("removeValuesFrom", () => {
     const result = removeValuesFrom(array, valuesToRemove);
 
     expect(result).to.deep.equal([]);
+  });
+});
+
+describe('getUniqueElements', () => {
+  it('should return an array with unique elements', () => {
+    const originalArray = [1, 2, 3, 3, 2, 1];
+    const uniqueArray = getUniqueElements(originalArray);
+
+    expect(uniqueArray).to.deep.equal([1, 2, 3]);
+  });
+
+  it('should handle an empty array', () => {
+    const originalArray: number[] = [];
+    const uniqueArray = getUniqueElements(originalArray);
+
+    expect(uniqueArray).to.deep.equal([]);
+  });
+
+  it('should handle an array with a single element', () => {
+    const originalArray = [42];
+    const uniqueArray = getUniqueElements(originalArray);
+
+    expect(uniqueArray).to.deep.equal([42]);
   });
 });
