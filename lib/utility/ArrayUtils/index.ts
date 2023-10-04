@@ -55,12 +55,16 @@ export function getUniqueElements<T>(array: T[]): T[] {
   return Array.from(new Set(array));
 }
 
-export function copyWithin<T>(array: T[], target: number, start: number, end: number = array.length): T[] {
+export function copyWithin<T>(
+  array: T[],
+  target: number,
+  start: number,
+  end: number = array.length,
+): T[] {
   const copied = array.slice(start, end);
   array.splice(target, copied.length, ...copied);
   return array;
 }
-
 
 // TODO: To be moved to Monad Utils
 type Predicate<T> = (item: T) => boolean;
