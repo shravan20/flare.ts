@@ -1,5 +1,6 @@
 import { expect } from "chai";
 import {
+  copyWithin,
   fillArray,
   filter,
   filterFalsy,
@@ -198,3 +199,20 @@ describe("getUniqueElements", () => {
     expect(uniqueArray).to.deep.equal([42]);
   });
 });
+
+describe('copyWithin', () => {
+  it('should copy a sequence of elements within the array', () => {
+    const originalArray = [1, 2, 3, 4, 5];
+    const newArray = copyWithin(originalArray, 2, 0, 3);
+
+    expect(newArray).to.deep.equal([1, 2, 1, 2, 3]);
+  });
+
+  it('should handle an empty array', () => {
+    const originalArray: number[] = [];
+    const newArray = copyWithin(originalArray, 0, 0);
+
+    expect(newArray).to.deep.equal([]);
+  });
+});
+
