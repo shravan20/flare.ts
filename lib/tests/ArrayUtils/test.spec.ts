@@ -219,9 +219,9 @@ describe("copyWithin", () => {
   });
 });
 
-describe('Set Operation Methods', () => {
-  describe('difference', () => {
-    it('should return the difference of two arrays', () => {
+describe("Set Operation Methods", () => {
+  describe("difference", () => {
+    it("should return the difference of two arrays", () => {
       const arr1 = [1, 2, 3, 4];
       const arr2 = [3, 4, 5, 6];
 
@@ -229,7 +229,7 @@ describe('Set Operation Methods', () => {
       expect(result).to.deep.equal([1, 2]);
     });
 
-    it('should handle empty arrays', () => {
+    it("should handle empty arrays", () => {
       const arr1: number[] = [];
       const arr2: number[] = [];
 
@@ -238,8 +238,8 @@ describe('Set Operation Methods', () => {
     });
   });
 
-  describe('union', () => {
-    it('should return the union of two arrays', () => {
+  describe("union", () => {
+    it("should return the union of two arrays", () => {
       const arr1 = [1, 2, 3, 4];
       const arr2 = [3, 4, 5, 6];
 
@@ -247,7 +247,7 @@ describe('Set Operation Methods', () => {
       expect(result).to.deep.equal([1, 2, 3, 4, 5, 6]);
     });
 
-    it('should handle empty arrays', () => {
+    it("should handle empty arrays", () => {
       const arr1: number[] = [];
       const arr2: number[] = [];
 
@@ -256,8 +256,8 @@ describe('Set Operation Methods', () => {
     });
   });
 
-  describe('intersection', () => {
-    it('should return the intersection of two arrays', () => {
+  describe("intersection", () => {
+    it("should return the intersection of two arrays", () => {
       const arr1 = [1, 2, 3, 4];
       const arr2 = [3, 4, 5, 6];
 
@@ -265,7 +265,7 @@ describe('Set Operation Methods', () => {
       expect(result).to.deep.equal([3, 4]);
     });
 
-    it('should handle empty arrays', () => {
+    it("should handle empty arrays", () => {
       const arr1: number[] = [];
       const arr2: number[] = [];
 

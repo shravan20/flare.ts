@@ -67,7 +67,7 @@ export function copyWithin<T>(
 }
 
 export function difference<T>(a1: T[], a2: T[]): T[] {
-  return filter(a1, item => !a2.includes(item));
+  return filter(a1, (item) => !a2.includes(item));
 }
 
 export function union<T>(a1: T[], a2: T[]): T[] {
@@ -75,9 +75,8 @@ export function union<T>(a1: T[], a2: T[]): T[] {
 }
 
 export function intersection<T>(a1: T[], a2: T[]): T[] {
-  return filter(a1, item => a2.includes(item));
+  return filter(a1, (item) => a2.includes(item));
 }
-
 
 // TODO: To be moved to Monad Utils
 type Predicate<T> = (item: T) => boolean;
