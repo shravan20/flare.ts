@@ -47,8 +47,8 @@ export function getTailN<T>(array: T[], limit: number = 0): T[] {
   return limit <= 0 ? [] : array.slice(-limit);
 }
 
-export function removeValuesFrom<T>(array: T[], values: T[]): void {
-  array = filter(array, item => !values.includes(item));
+export function removeValuesFrom<T>(array: T[], values: T[]): T[] {
+  return filter(array, (item) => !values.includes(item));
 }
 
 // TODO: To be moved to Monad Utils

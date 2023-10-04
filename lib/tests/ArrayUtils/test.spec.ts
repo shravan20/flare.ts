@@ -155,22 +155,22 @@ describe("isAnyMatchingLazy", () => {
   });
 });
 
-describe('removeValuesFrom', () => {
-  it('should remove specified values from the array', () => {
+describe("removeValuesFrom", () => {
+  it("should remove specified values from the array", () => {
     const array = [1, 2, 3, 1, 4, 1, 5];
     const valuesToRemove = [1, 5];
 
-    removeValuesFrom(array, valuesToRemove);
+    const result = removeValuesFrom(array, valuesToRemove);
 
-    expect(array).to.deep.equal([2, 3, 4]);
+    expect(result).to.deep.equal([2, 3, 4]);
   });
 
-  it('should handle an empty array', () => {
+  it("should handle an empty array", () => {
     const array: number[] = [];
     const valuesToRemove = [1, 5];
 
-    removeValuesFrom(array, valuesToRemove);
+    const result = removeValuesFrom(array, valuesToRemove);
 
-    expect(array).to.deep.equal([]);
+    expect(result).to.deep.equal([]);
   });
 });
