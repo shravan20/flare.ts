@@ -1,6 +1,7 @@
 import { expect } from "chai";
 import {
   copyWithin,
+  difference,
   fillArray,
   filter,
   filterFalsy,
@@ -9,8 +10,10 @@ import {
   getHeadN,
   getTailN,
   getUniqueElements,
+  intersection,
   isAnyMatchingLazy,
   removeValuesFrom,
+  union,
 } from "../../utility/ArrayUtils/index";
 
 describe("Sample Test Suite", () => {
@@ -213,5 +216,61 @@ describe("copyWithin", () => {
     const newArray = copyWithin(originalArray, 0, 0);
 
     expect(newArray).to.deep.equal([]);
+  });
+});
+
+describe('Set Operation Methods', () => {
+  describe('difference', () => {
+    it('should return the difference of two arrays', () => {
+      const arr1 = [1, 2, 3, 4];
+      const arr2 = [3, 4, 5, 6];
+
+      const result = difference(arr1, arr2);
+      expect(result).to.deep.equal([1, 2]);
+    });
+
+    it('should handle empty arrays', () => {
+      const arr1: number[] = [];
+      const arr2: number[] = [];
+
+      const result = difference(arr1, arr2);
+      expect(result).to.deep.equal([]);
+    });
+  });
+
+  describe('union', () => {
+    it('should return the union of two arrays', () => {
+      const arr1 = [1, 2, 3, 4];
+      const arr2 = [3, 4, 5, 6];
+
+      const result = union(arr1, arr2);
+      expect(result).to.deep.equal([1, 2, 3, 4, 5, 6]);
+    });
+
+    it('should handle empty arrays', () => {
+      const arr1: number[] = [];
+      const arr2: number[] = [];
+
+      const result = union(arr1, arr2);
+      expect(result).to.deep.equal([]);
+    });
+  });
+
+  describe('intersection', () => {
+    it('should return the intersection of two arrays', () => {
+      const arr1 = [1, 2, 3, 4];
+      const arr2 = [3, 4, 5, 6];
+
+      const result = intersection(arr1, arr2);
+      expect(result).to.deep.equal([3, 4]);
+    });
+
+    it('should handle empty arrays', () => {
+      const arr1: number[] = [];
+      const arr2: number[] = [];
+
+      const result = intersection(arr1, arr2);
+      expect(result).to.deep.equal([]);
+    });
   });
 });
