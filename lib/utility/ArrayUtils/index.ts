@@ -55,6 +55,5 @@ export function getUniqueElements<T>(array: T[]): T[] {
   return Array.from(new Set(array));
 }
 
-
 // TODO: To be moved to Monad Utils
 type Predicate<T> = (item: T) => boolean;
