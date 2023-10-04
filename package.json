@@ -12,7 +12,8 @@
         "prepublishOnly": "npm run build",
         "postinstall": "husky install",
         "sample": "husky install",
-        "test": "mocha --require ts-node/register 'lib/tests/**/*.spec.ts' 'lib/tests/**/*.spec.ts'"
+        "test": "mocha --require ts-node/register 'lib/tests/**/*.spec.ts' 'lib/tests/**/*.spec.ts'",
+        "check-setup": "npm run lint && npm run test && npm run build"
     },
     "keywords": [
         "validation", "javascript", "utility", "library"

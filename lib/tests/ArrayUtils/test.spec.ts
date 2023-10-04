@@ -1,5 +1,7 @@
 import { expect } from "chai";
 import {
+  copyWithin,
+  difference,
   fillArray,
   filter,
   filterFalsy,
@@ -7,7 +9,11 @@ import {
   findFirstMatching,
   getHeadN,
   getTailN,
+  getUniqueElements,
+  intersection,
+  removeValuesFrom,
   isAnyMatchingLazy,
+  union,
 } from "../../utility/ArrayUtils/index";
 
 describe("Sample Test Suite", () => {
@@ -151,5 +157,120 @@ describe("isAnyMatchingLazy", () => {
   it("should return false if no property matches the predicate", () => {
     const result = isAnyMatchingLazy(sampleArray, (item) => item > 10);
     expect(result).to.be.equal(false);
+  });
+});
+
+describe("removeValuesFrom", () => {
+  it("should remove specified values from the array", () => {
+    const array = [1, 2, 3, 1, 4, 1, 5];
+    const valuesToRemove = [1, 5];
+
+    const result = removeValuesFrom(array, valuesToRemove);
+
+    expect(result).to.deep.equal([2, 3, 4]);
+  });
+
+  it("should handle an empty array", () => {
+    const array: number[] = [];
+    const valuesToRemove = [1, 5];
+
+    const result = removeValuesFrom(array, valuesToRemove);
+
+    expect(result).to.deep.equal([]);
+  });
+});
+
+describe("getUniqueElements", () => {
+  it("should return an array with unique elements", () => {
+    const originalArray = [1, 2, 3, 3, 2, 1];
+    const uniqueArray = getUniqueElements(originalArray);
+
+    expect(uniqueArray).to.deep.equal([1, 2, 3]);
+  });
+
+  it("should handle an empty array", () => {
+    const originalArray: number[] = [];
+    const uniqueArray = getUniqueElements(originalArray);
+
+    expect(uniqueArray).to.deep.equal([]);
+  });
+
+  it("should handle an array with a single element", () => {
+    const originalArray = [42];
+    const uniqueArray = getUniqueElements(originalArray);
+
+    expect(uniqueArray).to.deep.equal([42]);
+  });
+});
+
+describe("copyWithin", () => {
+  it("should copy a sequence of elements within the array", () => {
+    const originalArray = [1, 2, 3, 4, 5];
+    const newArray = copyWithin(originalArray, 2, 0, 3);
+
+    expect(newArray).to.deep.equal([1, 2, 1, 2, 3]);
+  });
+
+  it("should handle an empty array", () => {
+    const originalArray: number[] = [];
+    const newArray = copyWithin(originalArray, 0, 0);
+
+    expect(newArray).to.deep.equal([]);
+  });
+});
+
+describe("Set Operation Methods", () => {
+  describe("difference", () => {
+    it("should return the difference of two arrays", () => {
+      const arr1 = [1, 2, 3, 4];
+      const arr2 = [3, 4, 5, 6];
+
+      const result = difference(arr1, arr2);
+      expect(result).to.deep.equal([1, 2]);
+    });
+
+    it("should handle empty arrays", () => {
+      const arr1: number[] = [];
+      const arr2: number[] = [];
+
+      const result = difference(arr1, arr2);
+      expect(result).to.deep.equal([]);
+    });
+  });
+
+  describe("union", () => {
+    it("should return the union of two arrays", () => {
+      const arr1 = [1, 2, 3, 4];
+      const arr2 = [3, 4, 5, 6];
+
+      const result = union(arr1, arr2);
+      expect(result).to.deep.equal([1, 2, 3, 4, 5, 6]);
+    });
+
+    it("should handle empty arrays", () => {
+      const arr1: number[] = [];
+      const arr2: number[] = [];
+
+      const result = union(arr1, arr2);
+      expect(result).to.deep.equal([]);
+    });
+  });
+
+  describe("intersection", () => {
+    it("should return the intersection of two arrays", () => {
+      const arr1 = [1, 2, 3, 4];
+      const arr2 = [3, 4, 5, 6];
+
+      const result = intersection(arr1, arr2);
+      expect(result).to.deep.equal([3, 4]);
+    });
+
+    it("should handle empty arrays", () => {
+      const arr1: number[] = [];
+      const arr2: number[] = [];
+
+      const result = intersection(arr1, arr2);
+      expect(result).to.deep.equal([]);
+    });
   });
 });

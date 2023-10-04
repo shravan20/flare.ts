@@ -47,5 +47,36 @@ export function getTailN<T>(array: T[], limit: number = 0): T[] {
   return limit <= 0 ? [] : array.slice(-limit);
 }
 
+export function removeValuesFrom<T>(array: T[], values: T[]): T[] {
+  return filter(array, (item) => !values.includes(item));
+}
+
+export function getUniqueElements<T>(array: T[]): T[] {
+  return Array.from(new Set(array));
+}
+
+export function copyWithin<T>(
+  array: T[],
+  target: number,
+  start: number,
+  end: number = array.length,
+): T[] {
+  const copied = array.slice(start, end);
+  array.splice(target, copied.length, ...copied);
+  return array;
+}
+
+export function difference<T>(a1: T[], a2: T[]): T[] {
+  return filter(a1, (item) => !a2.includes(item));
+}
+
+export function union<T>(a1: T[], a2: T[]): T[] {
+  return Array.from(new Set([...a1, ...a2]));
+}
+
+export function intersection<T>(a1: T[], a2: T[]): T[] {
+  return filter(a1, (item) => a2.includes(item));
+}
+
 // TODO: To be moved to Monad Utils
 type Predicate<T> = (item: T) => boolean;
