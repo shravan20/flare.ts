@@ -31,3 +31,11 @@
 ```
 
 Voila! The successful execution ensures setup has been done properly.
+
+---
+
+To use as the `flare.ts` [npm package](https://www.npmjs.com/package/flare.ts):
+
+```
+  npm i flare.ts
+```
