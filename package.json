@@ -1,5 +1,5 @@
 {
-    "name": "flare",
+    "name": "flare.ts",
     "version": "1.0.0",
     "description": "Powerful utility library for JS",
     "main": "dist/index.js",
