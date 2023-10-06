@@ -4,3 +4,30 @@
 </p>
 
 ---
+
+<p align="center">
+<b>Join us at our server for any discussion, guidance and help:</b>
+<a href="https://discord.gg/2nN2VqwNaK">
+  <img align="center" width="10%" src="https://dcbadge.vercel.app/api/server/2nN2VqwNaK" alt="logo"/>
+  </a>
+</p>
+
+## Setup:
+
+- How to setup the code?
+
+1. Clone the [repository](https://github.com/shravan20/flare)
+
+2. Provide NPM and Node.js is installed locally,
+
+```
+  npm install
+```
+
+3. Now to validate if everything is working fine, please run the following command:
+
+```
+  npm run check-setup
+```
+
+Voila! The successful execution ensures setup has been done properly.

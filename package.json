@@ -1,43 +1,42 @@
 {
-  "name": "flare",
-  "version": "1.0.0",
-  "description": "Powerful utility library for JS",
-  "main": "dist/index.js",
-  "scripts": {
-    "build": "tsc",
-    "format": "prettier --write \"lib/**/*.ts\" \"tests/**/*.ts\"",
-    "lint": "eslint lib/**/*.ts lib/*.ts",
-    "lint:fix": "npm run lint --fix",
-    "prepare": "husky install",
-    "prepublishOnly": "npm run build",
-    "postinstall": "husky install",
-    "sample": "husky install",
-    "test": "mocha --require ts-node/register 'tests/**/*.spec.ts' 'tests/*.spec.ts'"
-  },
-  "keywords": [
-    "validation",
-    "javascript",
-    "utility",
-    "library"
-  ],
-  "author": "shravan20",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/chai": "^4.3.5",
-    "@types/mocha": "^10.0.1",
-    "@typescript-eslint/eslint-plugin": "^6.5.0",
-    "chai": "^4.3.8",
-    "Console": "^1.1.0",
-    "eslint": "^8.48.0",
-    "eslint-config-standard-with-typescript": "^39.0.0",
-    "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-n": "^16.0.2",
-    "eslint-plugin-promise": "^6.1.1",
-    "husky": "^8.0.3",
-    "mocha": "^10.2.0",
-    "prettier": "^3.0.3",
-    "ts-node": "^10.9.1",
-    "tsc-watch": "^6.0.4",
-    "typescript": "^5.2.2"
-  }
+    "name": "flare",
+    "version": "1.0.0",
+    "description": "Powerful utility library for JS",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "tsc",
+        "format": "prettier --write \"lib/**/*.ts\" \"lib/tests/**/*.ts\"",
+        "lint": "eslint lib/**/*.ts lib/*.ts",
+        "lint:fix": "npm run lint --fix",
+        "prepare": "husky install",
+        "prepublishOnly": "npm run build",
+        "postinstall": "husky install",
+        "sample": "husky install",
+        "test": "mocha --require ts-node/register 'lib/tests/**/*.spec.ts' 'lib/tests/**/*.spec.ts'",
+        "check-setup": "npm run lint && npm run test && npm run build"
+    },
+    "keywords": [
+        "validation", "javascript", "utility", "library"
+    ],
+    "author": "shravan20",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/chai": "^4.3.5",
+        "@types/mocha": "^10.0.1",
+        "@typescript-eslint/eslint-plugin": "^6.5.0",
+        "chai": "^4.3.8",
+        "consola": "^3.2.3",
+        "Console": "^1.1.0",
+        "eslint": "^8.48.0",
+        "eslint-config-standard-with-typescript": "^39.0.0",
+        "eslint-plugin-import": "^2.28.1",
+        "eslint-plugin-n": "^16.0.2",
+        "eslint-plugin-promise": "^6.1.1",
+        "husky": "^8.0.3",
+        "mocha": "^10.2.0",
+        "prettier": "^3.0.3",
+        "ts-node": "^10.9.1",
+        "tsc-watch": "^6.0.4",
+        "typescript": "^5.2.2"
+    }
 }
