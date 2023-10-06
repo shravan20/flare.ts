@@ -21,7 +21,10 @@
     "keywords": [
         "validation", "javascript", "utility", "library"
     ],
-    "author": "shravan20",
+    "publishConfig": {
+        "registry": "https://custom-registry.example.com/"
+    },
+    "author": "@shravan20",
     "license": "MIT",
     "devDependencies": {
         "@types/chai": "^4.3.5",
