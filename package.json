@@ -21,7 +21,7 @@
     "keywords": [
         "validation", "javascript", "utility", "library"
     ],
-    "author": "@shravan20",
+    "author": "shravan20",
     "license": "MIT",
     "devDependencies": {
         "@types/chai": "^4.3.5",
