@@ -13,13 +13,13 @@
         "postinstall": "husky install",
         "sample": "husky install",
         "test": "mocha --require ts-node/register 'lib/tests/**/*.spec.ts' 'lib/tests/**/*.spec.ts'",
-        "check-setup": "npm run lint && npm run test && npm run build"
+        "check-setup": "npm run lint && npm run test && npm run build",
+        "patch-release": "npm version patch && npm publish",
+        "minor-release": "npm version minor && npm publish",
+        "major-release": "npm version major && npm publish"
     },
     "keywords": [
-        "validation",
-        "javascript",
-        "utility",
-        "library"
+        "validation", "javascript", "utility", "library"
     ],
     "author": "@shravan20",
     "license": "MIT",
