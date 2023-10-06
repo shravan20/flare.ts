@@ -1,6 +1,6 @@
 <p align="center">
   <img align="center" width="20%" src="https://raw.githubusercontent.com/shravan20/flare/main/assets/logo.png" alt="logo"/>
-  <h5 align="center">flare.ts: a powerful utility library for clean code in js</h5>
+  <h5 align="center">flare.ts: a powerful utility library for clean code in js & ts ecosystem</h5>
 </p>
 
 ---
