@@ -1,6 +1,6 @@
 {
-    "name": "flare",
-    "version": "1.0.0",
+    "name": "flare.ts",
+    "version": "1.0.1",
     "description": "Powerful utility library for JS",
     "main": "dist/index.js",
     "scripts": {
@@ -13,12 +13,18 @@
         "postinstall": "husky install",
         "sample": "husky install",
         "test": "mocha --require ts-node/register 'lib/tests/**/*.spec.ts' 'lib/tests/**/*.spec.ts'",
-        "check-setup": "npm run lint && npm run test && npm run build"
+        "check-setup": "npm run lint && npm run test && npm run build",
+        "patch-release": "npm version patch && npm publish",
+        "minor-release": "npm version minor && npm publish",
+        "major-release": "npm version major && npm publish"
     },
     "keywords": [
         "validation", "javascript", "utility", "library"
     ],
-    "author": "shravan20",
+    "publishConfig": {
+        "registry": "https://custom-registry.example.com/"
+    },
+    "author": "@shravan20",
     "license": "MIT",
     "devDependencies": {
         "@types/chai": "^4.3.5",

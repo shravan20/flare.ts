@@ -1,3 +1,7 @@
+/node_modules
+/tests
+*.md
+
 # Logs
 logs
 *.log

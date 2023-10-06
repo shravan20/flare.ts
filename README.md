@@ -1,6 +1,6 @@
 <p align="center">
-  <img align="center" width="20%" src="assets/logo.png" alt="logo"/>
-  <h5 align="center">flare: a powerful utility library for clean code in js</h5>
+  <img align="center" width="20%" src="https://raw.githubusercontent.com/shravan20/flare/main/assets/logo.png" alt="logo"/>
+  <h5 align="center">flare.ts: a powerful utility library for clean code in js</h5>
 </p>
 
 ---
@@ -31,3 +31,11 @@
 ```
 
 Voila! The successful execution ensures setup has been done properly.
+
+---
+
+To use as the `flare.ts` [npm package](https://www.npmjs.com/package/flare.ts):
+
+```
+  npm i flare.ts
+```
