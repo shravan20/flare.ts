@@ -1,7 +1,5 @@
 import { expect } from "chai";
-import {
-  compareJSONObject
-} from "../../utility/JSONUtils/index";
+import { compareJSONObject } from "../../utility/JSONUtils/index";
 
 describe("compareJSONObjects", () => {
   it("should compare two json objects", () => {
@@ -10,8 +8,8 @@ describe("compareJSONObjects", () => {
       age: 30,
       address: {
         street: "123 Main St",
-        city: "Anytown"
-      }
+        city: "Anytown",
+      },
     };
 
     const obj2 = {
@@ -24,7 +22,6 @@ describe("compareJSONObjects", () => {
       },
     };
     const result = compareJSONObject(obj1, obj2);
-    console.log("return val", result);
     const expectedResult = {
       address: {
         nested: {
@@ -54,7 +51,7 @@ describe("compareJSONObjects", () => {
         status: "modified",
         value1: 30,
         value2: 40,
-      }
+      },
     };
     expect(result).to.deep.equal(expectedResult);
   });
