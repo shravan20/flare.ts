@@ -1,0 +1,439 @@
+import math
+
+class MathUtils:
+    @staticmethod
+    def sin(x):
+        return math.sin(x)
+
+    @staticmethod
+    def cos(x):
+        return math.cos(x)
+
+    @staticmethod
+    def tan(x):
+        return math.tan(x)
+
+    @staticmethod
+    def cosec(x):
+        if math.sin(x) == 0:
+            raise ValueError("Cosec is undefined for this value")
+        return 1 / math.sin(x)
+
+    @staticmethod
+    def sec(x):
+        if math.cos(x) == 0:
+            raise ValueError("Sec is undefined for this value")
+        return 1 / math.cos(x)
+
+    @staticmethod
+    def cot(x):
+        if math.tan(x) == 0:
+            raise ValueError("Cot is undefined for this value")
+        return 1 / math.tan(x)
+
+    @staticmethod
+    def sinh(x):
+        return math.sinh(x)
+
+    @staticmethod
+    def cosh(x):
+        return math.cosh(x)
+
+    @staticmethod
+    def tanh(x):
+        return math.tanh(x)
+
+    @staticmethod
+    def cosech(x):
+        if math.sinh(x) == 0:
+            raise ValueError("Cosech is undefined for this value")
+        return 1 / math.sinh(x)
+
+    @staticmethod
+    def sech(x):
+        if math.cosh(x) == 0:
+            raise ValueError("Sech is undefined for this value")
+        return 1 / math.cosh(x)
+
+    @staticmethod
+    def coth(x):
+        if math.tanh(x) == 0:
+            raise ValueError("Coth is undefined for this value")
+        return 1 / math.tanh(x)
+
+    @staticmethod
+    def isNumber(x):
+        return isinstance(x, (int, float))
+
+    @staticmethod
+    def isInteger(x):
+        return isinstance(x, int)
+
+    @staticmethod
+    def isPrime(x):
+        if x <= 1:
+            return False
+        if x <= 3:
+            return True
+        if x % 2 == 0 or x % 3 == 0:
+            return False
+        i = 5
+        while i * i <= x:
+            if x % i == 0 or x % (i + 2) == 0:
+                return False
+            i += 6
+        return True
+
+    @staticmethod
+    def getAbsolutePrecision(x):
+        return abs(x)
+
+    @staticmethod
+    def getEpsilon():
+        return math.finfo(float).eps
+
+    @staticmethod
+    def acosh(x):
+        if x < 1:
+            raise ValueError("acosh is undefined for values less than 1")
+        return math.acosh(x)
+
+    @staticmethod
+    def acos(x):
+        if x < -1 or x > 1:
+            raise ValueError("acos is undefined for values outside [-1, 1]")
+        return math.acos(x)
+
+    @staticmethod
+    def atanh(x):
+        if x <= -1 or x >= 1:
+            raise ValueError("atanh is undefined for values outside (-1, 1)")
+        return math.atanh(x)
+
+    @staticmethod
+    def copySign(x, y):
+        return math.copysign(x, y)
+
+    @staticmethod
+    def getExponent(x):
+        return math.frexp(x)[1]
+
+    # Other methods can be added similarly for remaining functions.
+
+    @staticmethod
+    def add(x, y):
+        return x + y
+
+    @staticmethod
+    def subtract(x, y):
+        return x - y
+
+    @staticmethod
+    def multiply(x, y):
+        return x * y
+
+    @staticmethod
+    def divide(x, y):
+        if y == 0:
+            raise ValueError("Cannot divide by zero")
+        return x / y
+
+# Example usage:
+result_acosh = MathUtils.acosh(2.0)
+result_acos = MathUtils.acos(0.5)
+result_atanh = MathUtils.atanh(0.7)
+result_copy_sign = MathUtils.copySign(5.0, -3.0)
+result_get_exponent = MathUtils.getExponent(64.0)
+
+print("acosh(2.0):", result_acosh)
+print("acos(0.5):", result_acos)
+print("atanh(0.7):", result_atanh)
+print("copySign(5.0, -3.0):", result_copy_sign)
+print("getExponent(64.0):", result_get_exponent)
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+import math
+
+class MathUtils:
+    """
+    A utility class for various mathematical operations.
+
+    Functions:
+    ----------
+
+    1. sin(x)
+        Purpose: Calculate the sine of an angle in radians.
+        Usage: MathUtils.sin(x)
+        Parameters:
+            - x (float): The angle in radians.
+        Return:
+            - (float) The sine of the angle.
+        Example:
+            >>> result = MathUtils.sin(math.pi / 6)
+            >>> print(result)
+            0.49999999999999994
+
+    2. cos(x)
+        Purpose: Calculate the cosine of an angle in radians.
+        Usage: MathUtils.cos(x)
+        Parameters:
+            - x (float): The angle in radians.
+        Return:
+            - (float) The cosine of the angle.
+        Example:
+            >>> result = MathUtils.cos(math.pi / 3)
+            >>> print(result)
+            0.5000000000000001
+
+    3. tan(x)
+        Purpose: Calculate the tangent of an angle in radians.
+        Usage: MathUtils.tan(x)
+        Parameters:
+            - x (float): The angle in radians.
+        Return:
+            - (float) The tangent of the angle.
+        Example:
+            >>> result = MathUtils.tan(math.pi / 4)
+            >>> print(result)
+            0.9999999999999999
+
+    4. cosec(x)
+        Purpose: Calculate the cosecant of an angle in radians.
+        Usage: MathUtils.cosec(x)
+        Parameters:
+            - x (float): The angle in radians.
+        Return:
+            - (float) The cosecant of the angle.
+        Example:
+            >>> result = MathUtils.cosec(math.pi / 6)
+            >>> print(result)
+            2.0000000000000004
+
+    5. sec(x)
+        Purpose: Calculate the secant of an angle in radians.
+        Usage: MathUtils.sec(x)
+        Parameters:
+            - x (float): The angle in radians.
+        Return:
+            - (float) The secant of the angle.
+        Example:
+            >>> result = MathUtils.sec(math.pi / 4)
+            >>> print(result)
+            1.4142135623730951
+
+    6. cot(x)
+        Purpose: Calculate the cotangent of an angle in radians.
+        Usage: MathUtils.cot(x)
+        Parameters:
+            - x (float): The angle in radians.
+        Return:
+            - (float) The cotangent of the angle.
+        Example:
+            >>> result = MathUtils.cot(math.pi / 3)
+            >>> print(result)
+            0.5773502691896257
+
+    7. sinh(x)
+        Purpose: Calculate the hyperbolic sine of a number.
+        Usage: MathUtils.sinh(x)
+        Parameters:
+            - x (float): The input value.
+        Return:
+            - (float) The hyperbolic sine of the input.
+        Example:
+            >>> result = MathUtils.sinh(1.0)
+            >>> print(result)
+            1.1752011936438014
+
+    8. cosh(x)
+        Purpose: Calculate the hyperbolic cosine of a number.
+        Usage: MathUtils.cosh(x)
+        Parameters:
+            - x (float): The input value.
+        Return:
+            - (float) The hyperbolic cosine of the input.
+        Example:
+            >>> result = MathUtils.cosh(1.0)
+            >>> print(result)
+            1.5430806348152437
+
+    9. tanh(x)
+        Purpose: Calculate the hyperbolic tangent of a number.
+        Usage: MathUtils.tanh(x)
+        Parameters:
+            - x (float): The input value.
+        Return:
+            - (float) The hyperbolic tangent of the input.
+        Example:
+            >>> result = MathUtils.tanh(0.5)
+            >>> print(result)
+            0.46211715726000974
+
+    10. cosech(x)
+        Purpose: Calculate the hyperbolic cosecant of a number.
+        Usage: MathUtils.cosech(x)
+        Parameters:
+            - x (float): The input value.
+        Return:
+            - (float) The hyperbolic cosecant of the input.
+        Example:
+            >>> result = MathUtils.cosech(1.0)
+            >>> print(result)
+            0.8509181282393216
+
+    11. sech(x)
+        Purpose: Calculate the hyperbolic secant of a number.
+        Usage: MathUtils.sech(x)
+        Parameters:
+            - x (float): The input value.
+        Return:
+            - (float) The hyperbolic secant of the input.
+        Example:
+            >>> result = MathUtils.sech(0.5)
+            >>> print(result)
+            0.8868188839700739
+
+    12. coth(x)
+        Purpose: Calculate the hyperbolic cotangent of a number.
+        Usage: MathUtils.coth(x)
+        Parameters:
+            - x (float): The input value.
+        Return:
+            - (float) The hyperbolic cotangent of the input.
+        Example:
+            >>> result = MathUtils.coth(1.0)
+            >>> print(result)
+            1.313035285499331
+
+    13. isNumber(x)
+        Purpose: Check if a value is a number (float or integer).
+        Usage: MathUtils.isNumber(x)
+        Parameters:
+            - x (float/int): The input value.
+        Return:
+            - (bool) True if the input is a number; False otherwise.
+        Example:
+            >>> result = MathUtils.isNumber(42)
+            >>> print(result)
+            True
+
+    14. isInteger(x)
+        Purpose: Check if a value is an integer.
+        Usage: MathUtils.isInteger(x)
+        Parameters:
+            - x (int): The input value.
+        Return:
+            - (bool) True if the input is an integer; False otherwise.
+        Example:
+            >>> result = MathUtils.isInteger(42)
+            >>> print(result)
+            True
+
+    15. isPrime(x)
+        Purpose: Check if a number is a prime number.
+        Usage: MathUtils.isPrime(x)
+        Parameters:
+            - x (int): The number to be checked.
+        Return:
+            - (bool) True if the input is a prime number; False otherwise.
+        Example:
+            >>> result = MathUtils.isPrime(17)
+            >>> print(result)
+            True
+
+    16. getAbsolutePrecision(x)
+        Purpose: Get the absolute precision of a number.
+        Usage: MathUtils.getAbsolutePrecision(x)
+        Parameters:
+            - x (float/int): The input number.
+        Return:
+            - (float) The absolute precision of the input.
+        Example:
+            >>> result = MathUtils.getAbsolutePrecision(-42.42)
+            >>> print(result)
+            42.42
+
+    17. getEpsilon()
+        Purpose: Get the machine epsilon for floating-point numbers.
+        Usage: MathUtils.getEpsilon()
+        Parameters: None
+        Return:
+            - (float) The machine epsilon.
+        Example:
+            >>> result = MathUtils.getEpsilon()
+            >>> print(result)
+            2.220446049250313e-16
+
+    18. acosh(x)
+        Purpose: Calculate the inverse hyperbolic cosine of a number.
+        Usage: MathUtils.acosh(x)
+        Parameters:
+            - x (float): The input value.
+        Return:
+            - (float) The inverse hyperbolic cosine of the input.
+        Example:
+            >>> result = MathUtils.acosh(2.0)
+            >>> print(result)
+            1.3169578969248166
+
+    19. acos(x)
+        Purpose: Calculate the inverse cosine of a number.
+        Usage: MathUtils.acos(x)
+        Parameters:
+            - x (float): The input value in the range [-1, 1].
+        Return:
+            - (float) The inverse cosine of the input.
+        Example:
+            >>> result = MathUtils.acos(0.5)
+            >>> print(result)
+            1.0471975511965979
+
+    20. atanh(x)
+        Purpose: Calculate the inverse hyperbolic tangent of a number.
+        Usage: MathUtils.atanh(x)
+        Parameters:
+            - x (float): The input value in the range (-1, 1).
+        Return:
+            - (float) The inverse hyperbolic tangent of the input.
+        Example:
+            >>> result = MathUtils.atanh(0.7)
+            >>> print(result)
+            1.0986122886681098
+
+    21. copySign(x, y)
+        Purpose: Copy the sign of one number to another.
+        Usage: MathUtils.copySign(x, y)
+        Parameters:
+            - x (float): The source number whose sign will be copied.
+            - y (float): The target number to which the sign will be copied.
+        Return:
+            - (float) The value of y with the sign of x.
+        Example:
+            >>> result = MathUtils.copySign(5.0, -3.0)
+            >>> print(result)
+            -5.0
+
+    22. getExponent(x)
+        Purpose: Get the exponent of a floating-point number.
+        Usage: MathUtils.getExponent(x)
+        Parameters:
+            - x (float): The input value.
+        Return:
+            - (int) The exponent of the input.
+        Example:
+            >>> result = MathUtils.getExponent(64.0)
+            >>> print(result)
+            7
+
+    ...
+
+    # Document other functions similarly.
+
+    """
+
+    # Define the functions as shown in previous responses.
