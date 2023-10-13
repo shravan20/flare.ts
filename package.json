@@ -1,6 +1,6 @@
 {
     "name": "flare.ts",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "description": "Powerful utility library for JS",
     "main": "dist/index.js",
     "scripts": {
@@ -19,7 +19,10 @@
         "major-release": "npm version major && npm publish"
     },
     "keywords": [
-        "validation", "javascript", "utility", "library"
+        "validation",
+        "javascript",
+        "utility",
+        "library"
     ],
     "publishConfig": {
         "registry": "https://registry.npmjs.org/"

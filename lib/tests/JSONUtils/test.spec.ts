@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { compareJSONObject } from "../../utility/JSONUtils/index";
+import { compareJSONObject } from "../../utility/JsonUtils/index";
 
 describe("compareJSONObjects", () => {
   it("should compare two json objects", () => {
