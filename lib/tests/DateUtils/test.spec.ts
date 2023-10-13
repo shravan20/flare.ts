@@ -118,7 +118,6 @@ describe("Date Formatting Utility Functions", () => {
     it("should format time correctly", () => {
       const date = new Date(2023, 9, 13, 15, 30, 45); // 3:30:45 PM
       const formattedTime = formatTime(date);
-      console.log(formatTime)
       expect(formattedTime).to.equal("03:30 PM");
     });
   });
