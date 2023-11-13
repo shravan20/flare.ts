@@ -39,3 +39,14 @@ To use as the `flare.ts` [npm package](https://www.npmjs.com/package/flare.ts):
 ```
   npm i flare.ts
 ```
+
+
+### Features Supported:
+- Date Utils
+- Array Utils
+- JSON Utils
+- Math Utils
+
+### Features to be Supported:
+- Function Utils
+- CSV Utils
