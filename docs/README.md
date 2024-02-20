@@ -12,7 +12,7 @@
   </a>
 </p>
 
-## Setup:
+### Setup
 
 - How to setup the code?
 
@@ -40,13 +40,14 @@ To use as the `flare.ts` [npm package](https://www.npmjs.com/package/flare.ts):
   npm i flare.ts
 ```
 
+### Features Supported
 
-### Features Supported:
 - Date Utils
 - Array Utils
 - JSON Utils
 - Math Utils
 
-### Features to be Supported:
+### Features to be Supported
+
 - Function Utils
 - CSV Utils
