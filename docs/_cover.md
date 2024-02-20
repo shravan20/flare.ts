@@ -3,7 +3,8 @@
   Flare.ts
 </h1>
 
-[![GitHub tags](https://img.shields.io/github/tag/shravan20/flare.ts.svg)](https://github.com/shravan20/flare.ts/tags/) <!-- TODO: Update username and repo name -->
+[![GitHub tags](https://img.shields.io/github/tag/shravan20/flare.ts.svg)](https://github.com/shravan20/flare.ts/tags/)
+[![Made in love with FOSS](https://madewithlove.now.sh/in?heart=true&colorA=%23ff671f&colorB=%23046a38&text=the+Quantum+Realm+of+Open+Source)](https://github.com/shravan20/flare.ts/)
 
 > A powerful utility library for clean code in js & ts ecosystem
 
