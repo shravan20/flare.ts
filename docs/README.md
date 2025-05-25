@@ -1,6 +1,6 @@
 <p align="center">
-  <img align="center" width="20%" src="https://raw.githubusercontent.com/shravan20/flare/main/assets/logo.png" alt="logo"/>
-  <h5 align="center">flare.ts: a powerful utility library for clean code in js & ts ecosystem</h5>
+  <img align="center" width="20%" src="https://raw.githubusercontent.com/shravan20/utilite/main/assets/logo.png" alt="logo"/>
+  <h5 align="center">utilite: a powerful utility library for clean code in js & ts ecosystem</h5>
 </p>
 
 ---
@@ -16,7 +16,7 @@
 
 - How to setup the code?
 
-1. Clone the [repository](https://github.com/shravan20/flare)
+1. Clone the [repository](https://github.com/shravan20/utilite)
 
 2. Provide NPM and Node.js is installed locally,
 
@@ -34,10 +34,10 @@ Voila! The successful execution ensures setup has been done properly.
 
 ---
 
-To use as the `flare.ts` [npm package](https://www.npmjs.com/package/flare.ts):
+To use as the `utilite` [npm package](https://www.npmjs.com/package/utilite):
 
 ```
-  npm i flare.ts
+  npm i utilite
 ```
 
 ### Features Supported
