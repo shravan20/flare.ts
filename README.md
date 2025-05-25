@@ -1,6 +1,6 @@
 <p align="center">
   <img align="center" width="20%" src="https://raw.githubusercontent.com/shravan20/flare/main/assets/logo.png" alt="logo"/>
-  <h5 align="center">flare.ts: a powerful utility library for clean code in js & ts ecosystem</h5>
+  <h5 align="center">utilite: a powerful utility library for clean code in js & ts ecosystem</h5>
 </p>
 
 ---
@@ -34,10 +34,25 @@ Voila! The successful execution ensures setup has been done properly.
 
 ---
 
-To use as the `flare.ts` [npm package](https://www.npmjs.com/package/flare.ts):
+To use as the `utilite` [npm package](https://www.npmjs.com/package/utilite):
 
 ```
-  npm i flare.ts
+  npm i utilite
+```
+
+### Usage
+
+```typescript
+import { isAnyMatching, formatDate, compareJSONObject } from 'utilite';
+
+// Array utilities
+const hasEvenNumber = isAnyMatching([1, 3, 4, 5], (value) => value % 2 === 0);
+
+// Date utilities  
+const formattedDate = formatDate(new Date(), 'MM/DD/YYYY');
+
+// JSON utilities
+const diff = compareJSONObject(obj1, obj2);
 ```
 
 ### Features Supported

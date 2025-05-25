@@ -1,8 +1,9 @@
 {
-  "name": "flare.ts",
-  "version": "2.1.0",
+  "name": "utilite",
+  "version": "1.0.0",
   "description": "Powerful utility library for JS",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write \"lib/**/*.ts\" \"lib/tests/**/*.ts\"",
@@ -23,7 +24,9 @@
     "validation",
     "javascript",
     "utility",
-    "library"
+    "library",
+    "utilify",
+    "utils"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
