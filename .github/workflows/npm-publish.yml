@@ -6,6 +6,9 @@ name: Node.js Package
 on:
   release:
     types: [created]
+  push:
+    tags:
+      - "v*"
 
 jobs:
   build:
@@ -21,20 +24,13 @@ jobs:
   publish-npm:
     needs: build
     runs-on: ubuntu-latest
-    if: ${{ (
-      github.event_name == 'push' &&
-      github.event.head_commit &&
-      !contains(github.event.head_commit.message, '[skip release]')
-      ) || (
-      startsWith(github.ref, 'refs/tags/') &&
-      !contains(github.ref, '[skip release]')
-      ) }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: latest
+          node-version: "latest"
           registry-url: https://registry.npmjs.org/
+          auth-token: ${{ secrets.NPM_GAT }}
       - run: |
           npm ci
           npm publish
